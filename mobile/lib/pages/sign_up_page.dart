@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../components/error_pop_up.dart';
 import '../components/sign_in_up_components/buttons.dart';
 import '../components/sign_in_up_components/welcome_widget.dart';
 import '../components/text_field_widget.dart';
-import '../components/text_widget.dart';
 
 
 class MySignUpPage extends StatefulWidget {
@@ -14,6 +14,38 @@ class MySignUpPage extends StatefulWidget {
 }
 
 class _MySignUpPageState extends State<MySignUpPage> {
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passController = TextEditingController();
+  TextEditingController _nameController = TextEditingController();
+  TextEditingController _numberController = TextEditingController();
+
+  void _verification(BuildContext context){
+    String mail = _emailController.text;
+    String pass = _passController.text;
+    String name = _nameController.text;
+    String number = _numberController.text;
+
+    if (mail.isEmpty){
+      showSnackBar(context,"Enter email please ! ");
+      return;
+    }
+    if (name.isEmpty){
+      showSnackBar(context,"Enter username please ! ");
+      return;
+    }
+    if (number.isEmpty){
+      showSnackBar(context,"Enter number please ! ");
+      return;
+    }
+    if (pass.isEmpty){
+      showSnackBar(context,"Enter password please ! ");
+      return;
+    }
+
+
+
+  }
+
   @override
   Widget build(BuildContext context) {
     TextTheme _textTheme = Theme.of(context).textTheme;
@@ -44,12 +76,15 @@ class _MySignUpPageState extends State<MySignUpPage> {
                     child: Text("Sign in",style: _textTheme.displayLarge,),
                   ),
                   Text(
-                    "Enter your username or email address",
+                    "Enter your email address",
                     style: _textTheme.bodyMedium,
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: screenHeight * 0.02, bottom: screenHeight * 0.03),
-                    child: const TextFieldWidget(hint: "Username or email address"),
+                    child: TextFieldWidget(
+                      hint: "Email address",
+                      controller: _emailController,
+                    ),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -64,7 +99,10 @@ class _MySignUpPageState extends State<MySignUpPage> {
                           Container(
                             padding: EdgeInsets.only(top: screenHeight * 0.01, bottom: screenHeight * 0.03),
                             width: MediaQuery.of(context).size.width * 0.35,
-                            child: const TextFieldWidget(hint: "User name"),
+                            child: TextFieldWidget(
+                              hint: "User name",
+                              controller: _nameController,
+                            ),
                           ),
                         ],
                       ),
@@ -78,7 +116,10 @@ class _MySignUpPageState extends State<MySignUpPage> {
                           Container(
                             padding: EdgeInsets.only(top: screenHeight * 0.01, bottom: screenHeight * 0.03),
                             width: MediaQuery.of(context).size.width * 0.35,
-                            child: const TextFieldWidget(hint: "Contact Number"),
+                            child: TextFieldWidget(
+                              hint: "Contact Number",
+                              controller: _numberController,
+                            ),
                           ),
                         ],
                       ),
@@ -90,11 +131,16 @@ class _MySignUpPageState extends State<MySignUpPage> {
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: screenHeight * 0.02, bottom: screenHeight * 0.05),
-                    child: const TextFieldWidget(hint: "Password"),
+                    child: TextFieldWidget(
+                      hint: "Password",
+                      controller: _passController,
+                    ),
                   ),
 
-                  const MainButtonWidget(content: "Sign up",),
-
+                  MainButtonWidget(
+                    content: "Sign up",
+                    onPressed: (){_verification(context);},
+                  ),
                 ],
               ),
             ),

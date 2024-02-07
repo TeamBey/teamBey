@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:teambey_org/theme/themes_contants.dart';
-
 import '../text_widget.dart';
 
 class GoogleButtonWidget extends StatelessWidget{
@@ -93,15 +91,17 @@ class AppleButtonWidget extends StatelessWidget {
 
 class MainButtonWidget extends StatelessWidget{
   final String content;
+  final VoidCallback onPressed;
 
   const MainButtonWidget({
     super.key,
-    required this.content
+    required this.content,
+    required this.onPressed,
   });
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){},
+      onTap: onPressed,
       child: Container(
         width: double.infinity,
           padding: EdgeInsets.symmetric(

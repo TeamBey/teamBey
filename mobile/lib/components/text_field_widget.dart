@@ -2,11 +2,15 @@ import 'package:flutter/material.dart';
 
 class TextFieldWidget extends StatelessWidget{
   final String hint;
+  final TextEditingController controller;
 
   const TextFieldWidget({
     super.key,
-    required this.hint
+    required this.hint,
+    required this.controller,
   });
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +22,6 @@ class TextFieldWidget extends StatelessWidget{
             color: Colors.grey,
             style: BorderStyle.solid
           ),
-
         ),
         focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
@@ -28,12 +31,12 @@ class TextFieldWidget extends StatelessWidget{
               width: 2,
             )
         ),
-
         hintText: hint,
         hintStyle: const TextStyle(
           color: Colors.grey,
         )
       ),
+      controller: controller,
     );
   }
 }
