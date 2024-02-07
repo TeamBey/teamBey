@@ -12,8 +12,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromRGBO(0,128,128,255)),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromRGBO(0,128,128,255),secondary: Colors.white,),
         fontFamily: GoogleFonts.poppins().fontFamily,
       ),
       home: MySignInPage(),

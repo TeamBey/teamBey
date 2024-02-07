@@ -28,7 +28,7 @@ class _MySignUpPageState extends State<MySignUpPage> {
             width: screenWidth * 0.9,
             height: screenHeight * 0.9,
             decoration: BoxDecoration(
-                color: Colors.white,
+                color: Theme.of(context).colorScheme.secondary,
                 borderRadius: BorderRadius.circular(40)
             ),
             padding: const EdgeInsets.all(20),
