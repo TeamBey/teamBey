@@ -104,7 +104,7 @@ class _MySignUpPageState extends State<MySignUpPage> {
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: screenHeight * 0.02, bottom: screenHeight * 0.05),
-                    child: TextFieldWidget(
+                    child: PasswordTextFieldWidget(
                       hint: "Password",
                       controller: _passController,
                     ),
