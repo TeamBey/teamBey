@@ -5,27 +5,25 @@ import '../../pages/sign_up_page.dart';
 import '../text_widget.dart';
 
 Container welcomeWidget(BuildContext context, String page){
+  TextTheme _textTheme = Theme.of(context).textTheme;
   return Container(
     padding: EdgeInsets.only(top: 20),
     child: (
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Column(
+          Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              TextWidget(
-                content: "Welcome to",
-                color: Colors.black,
-                size: 20,
-                bold: false,
+              Text(
+                "Welcome to",
+                style: _textTheme.bodyLarge,
               ),
-              TextWidget(
-                content: "TeamBey",
-                color: Colors.black,
-                size: 20,
-                bold: false,
+              Text(
+                "teamBey",
+                style: _textTheme.bodyLarge,
               ),
+
             ],
           ),
           page == "in"?

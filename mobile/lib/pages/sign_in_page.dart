@@ -13,6 +13,7 @@ class MySignInPage extends StatefulWidget {
 class _MySignInPageState extends State<MySignInPage> {
   @override
   Widget build(BuildContext context) {
+    TextTheme _textTheme = Theme.of(context).textTheme;
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
@@ -32,19 +33,12 @@ class _MySignInPageState extends State<MySignInPage> {
             child: SingleChildScrollView(
               scrollDirection: Axis.vertical,
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   welcomeWidget(context,"in"),
-                  Align(
-                    alignment: Alignment.topLeft,
-                    child: Padding(
-                      padding: EdgeInsets.only(bottom: screenHeight * 0.04),
-                      child: const TextWidget(
-                        content: "Sign in",
-                        color: Colors.black,
-                        size: 50,
-                        bold: true,
-                      ),
-                    ),
+                  Padding(
+                    padding: EdgeInsets.only(bottom: screenHeight * 0.04),
+                    child: Text("Sign in",style: _textTheme.displayLarge,),
                   ),
                   Padding(
                     padding: EdgeInsets.only(bottom: screenHeight * 0.03),
@@ -52,32 +46,23 @@ class _MySignInPageState extends State<MySignInPage> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         GoogleButtonWidget(),
-                        const Fac_APPButtonWidget(image: "assets/images/facebook.png"),
-                        const Fac_APPButtonWidget(image: "assets/images/apple.png"),
+                        FacebookButtonWidget(),
+                        AppleButtonWidget(),
                       ],
                     ),
                   ),
-                  const Align(
-                    alignment: Alignment.topLeft,
-                    child: TextWidget(
-                      content: "Enter your username or email address",
-                      color: Colors.black,
-                      size: 15,
-                      bold: false,
-                    ),
+                  Text(
+                    "Enter your username or email address",
+                    style: _textTheme.bodyMedium,
                   ),
+
                   Padding(
                     padding: EdgeInsets.only(top: screenHeight * 0.02, bottom: screenHeight * 0.03),
                     child: const TextFieldWidget(hint: "Username or email address"),
                   ),
-                  const Align(
-                    alignment: Alignment.topLeft,
-                    child: TextWidget(
-                      content: "Enter your Password",
-                      color: Colors.black,
-                      size: 15,
-                      bold: false,
-                    ),
+                  Text(
+                    "Enter your password",
+                    style: _textTheme.bodyMedium,
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: screenHeight * 0.02,),

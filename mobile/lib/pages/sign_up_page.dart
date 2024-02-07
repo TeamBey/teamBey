@@ -16,6 +16,7 @@ class MySignUpPage extends StatefulWidget {
 class _MySignUpPageState extends State<MySignUpPage> {
   @override
   Widget build(BuildContext context) {
+    TextTheme _textTheme = Theme.of(context).textTheme;
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
@@ -40,18 +41,11 @@ class _MySignUpPageState extends State<MySignUpPage> {
                   welcomeWidget(context,"up"),
                   Padding(
                     padding: EdgeInsets.only(bottom: screenHeight * 0.04),
-                    child: const TextWidget(
-                      content: "Sign up",
-                      color: Colors.black,
-                      size: 50,
-                      bold: true,
-                    ),
+                    child: Text("Sign in",style: _textTheme.displayLarge,),
                   ),
-                  TextWidget(
-                    content: "Enter your username or email address",
-                    color: Colors.black,
-                    size: 15,
-                    bold: false,
+                  Text(
+                    "Enter your username or email address",
+                    style: _textTheme.bodyMedium,
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: screenHeight * 0.02, bottom: screenHeight * 0.03),
@@ -63,11 +57,9 @@ class _MySignUpPageState extends State<MySignUpPage> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const TextWidget(
-                            content: "User name",
-                            color: Colors.black,
-                            size: 15,
-                            bold: false,
+                          Text(
+                            "User name",
+                            style: _textTheme.bodyMedium,
                           ),
                           Container(
                             padding: EdgeInsets.only(top: screenHeight * 0.01, bottom: screenHeight * 0.03),
@@ -79,11 +71,9 @@ class _MySignUpPageState extends State<MySignUpPage> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const TextWidget(
-                            content: "Contact Number",
-                            color: Colors.black,
-                            size: 15,
-                            bold: false,
+                          Text(
+                            "Contact Number",
+                            style: _textTheme.bodyMedium,
                           ),
                           Container(
                             padding: EdgeInsets.only(top: screenHeight * 0.01, bottom: screenHeight * 0.03),
@@ -94,11 +84,9 @@ class _MySignUpPageState extends State<MySignUpPage> {
                       ),
                     ],
                   ),
-                  const TextWidget(
-                    content: "Enter your Password",
-                    color: Colors.black,
-                    size: 15,
-                    bold: false,
+                  Text(
+                    "Enter your Password",
+                    style: _textTheme.bodyMedium,
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: screenHeight * 0.02, bottom: screenHeight * 0.05),

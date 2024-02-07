@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:teambey_org/theme/themes_contants.dart';
 
 import '../text_widget.dart';
 
@@ -14,7 +15,7 @@ class GoogleButtonWidget extends StatelessWidget{
           horizontal: 10,
         ),
         decoration: BoxDecoration(
-          color: Color(0xFFFFF4E3),
+          color: Theme.of(context).colorScheme.onPrimary,
           borderRadius: BorderRadius.circular(10),
         ),
         child: Row(
@@ -39,13 +40,8 @@ class GoogleButtonWidget extends StatelessWidget{
   }
 }
 
-class Fac_APPButtonWidget extends StatelessWidget {
-  final String image;
+class FacebookButtonWidget extends StatelessWidget {
 
-  const Fac_APPButtonWidget({
-    super.key,
-    required this.image
-  });
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -56,14 +52,39 @@ class Fac_APPButtonWidget extends StatelessWidget {
             horizontal: 10,
           ),
           decoration: BoxDecoration(
-          color: Color(0xFFF2F2F2),
+          color: Theme.of(context).colorScheme.onSecondary,
           borderRadius: BorderRadius.circular(10),
         ),
         child: Image.asset(
-          image,
-          height: 20,
+          "assets/images/facebook.png",
+          height: 23,
           width: 20,
         )
+      ),
+    );
+  }
+}
+
+class AppleButtonWidget extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context).colorScheme.secondary;
+    return GestureDetector(
+      onTap: (){},
+      child: Container(
+          padding: EdgeInsets.symmetric(
+            vertical: 20,
+            horizontal: 8,
+          ),
+          decoration: BoxDecoration(
+            color: Theme.of(context).colorScheme.onSecondary,
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: Icon(
+            Icons.apple_rounded,
+            color: theme == Colors.white ? Colors.black : Colors.white,
+          )
       ),
     );
   }
