@@ -8,8 +8,11 @@ class GoogleButtonWidget extends StatelessWidget{
     return GestureDetector(
       onTap: (){},
       child: Container(
-        width: MediaQuery.of(context).size.width * 0.53,
-        padding: EdgeInsets.all(15),
+        width: MediaQuery.of(context).size.width * 0.55,
+        padding: EdgeInsets.symmetric(
+          vertical: 15,
+          horizontal: 10,
+        ),
         decoration: BoxDecoration(
           color: Color(0xFFFFF4E3),
           borderRadius: BorderRadius.circular(10),
@@ -86,9 +89,6 @@ class MainButtonWidget extends StatelessWidget{
           decoration: BoxDecoration(
             color: Theme.of(context).colorScheme.primary,
             borderRadius: BorderRadius.circular(10),
-            boxShadow: [
-              BoxShadow(blurRadius: 10,color: Colors.blueGrey,blurStyle: BlurStyle.normal,offset: Offset(0, 1),spreadRadius: 1),
-            ]
           ),
           child: Center(child: TextWidget(color: Colors.white,content: content,bold: false,size: 18)),
       ),
