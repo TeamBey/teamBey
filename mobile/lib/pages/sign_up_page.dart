@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../components/error_pop_up.dart';
 import '../components/sign_in_up_components/buttons.dart';
 import '../components/sign_in_up_components/welcome_widget.dart';
 import '../components/text_field_widget.dart';
+import '../funtions/forum_verification.dart';
 
 
 class MySignUpPage extends StatefulWidget {
@@ -18,33 +18,6 @@ class _MySignUpPageState extends State<MySignUpPage> {
   TextEditingController _passController = TextEditingController();
   TextEditingController _nameController = TextEditingController();
   TextEditingController _numberController = TextEditingController();
-
-  void _verification(BuildContext context){
-    String mail = _emailController.text;
-    String pass = _passController.text;
-    String name = _nameController.text;
-    String number = _numberController.text;
-
-    if (mail.isEmpty){
-      showSnackBar(context,"Enter email please ! ");
-      return;
-    }
-    if (name.isEmpty){
-      showSnackBar(context,"Enter username please ! ");
-      return;
-    }
-    if (number.isEmpty){
-      showSnackBar(context,"Enter number please ! ");
-      return;
-    }
-    if (pass.isEmpty){
-      showSnackBar(context,"Enter password please ! ");
-      return;
-    }
-
-
-
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -139,7 +112,9 @@ class _MySignUpPageState extends State<MySignUpPage> {
 
                   MainButtonWidget(
                     content: "Sign up",
-                    onPressed: (){_verification(context);},
+                    onPressed: (){
+                      ForumVerif().verificationSignUp(context,_emailController.text, _passController.text,_nameController.text,_numberController.text);
+                      },
                   ),
                 ],
               ),

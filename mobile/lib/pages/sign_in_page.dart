@@ -5,46 +5,18 @@ import '../components/sign_in_up_components/buttons.dart';
 import '../components/sign_in_up_components/welcome_widget.dart';
 import '../components/text_field_widget.dart';
 import '../components/text_widget.dart';
+import '../funtions/forum_verification.dart';
 
 class MySignInPage extends StatefulWidget {
   @override
   _MySignInPageState createState() => _MySignInPageState();
 }
 
-bool isStrongPassword(String password) {
-  return [
-    password.length >= 8,
-    password.contains(RegExp(r'[A-Z]')),
-    password.contains(RegExp(r'[a-z]')),
-    password.contains(RegExp(r'[0-9]')),
-    password.contains(RegExp(r'[!@#$%^&*(),.?":{}|<>]')),
-  ].every((condition) => condition);
-}
+
 
 class _MySignInPageState extends State<MySignInPage> {
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passController = TextEditingController();
-
-  void _verification(BuildContext context){
-    String mail = _emailController.text;
-    String pass = _passController.text;
-
-    if (mail.isEmpty){
-      showSnackBar(context,"Enter username or email please ! ");
-      return;
-    }
-    if (pass.isEmpty){
-      showSnackBar(context,"Enter password please ! ");
-      return;
-    }
-    if (!isStrongPassword(pass)){
-      showSnackBar(
-          context,
-          "Password must have 8 Caracters at least; 1 UpperCase, 1 LowerCase, 1 Number and 1 Special Character.",
-      );
-    }
-
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -132,7 +104,7 @@ class _MySignInPageState extends State<MySignInPage> {
                     child: MainButtonWidget(
                       content:"Sign in",
                       onPressed: (){
-                        _verification(context);
+                        ForumVerif().verificationSignIn(context,_emailController.text,_passController.text);
                       },
                     ),
                   ),
