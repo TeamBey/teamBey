@@ -60,6 +60,7 @@ class _PasswordTextFieldWidgetState extends State<PasswordTextFieldWidget> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context).colorScheme.secondary == Colors.white;
     return TextField(
       decoration: InputDecoration(
           border: OutlineInputBorder(
@@ -85,6 +86,7 @@ class _PasswordTextFieldWidgetState extends State<PasswordTextFieldWidget> {
             icon: Icon(
               _isPasswordVisible ? Icons.visibility : Icons.visibility_off,
             ),
+            color: theme ? Colors.black54 : Colors.white60,
             onPressed: (){
               setState((){
                 _isPasswordVisible = !_isPasswordVisible;
