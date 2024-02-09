@@ -60,7 +60,7 @@ class _MySignUpPageState extends State<MySignUpPage> {
                           ),
                           Container(
                             padding: EdgeInsets.only(top: screenHeight * 0.01, bottom: screenHeight * 0.05),
-                            width: MediaQuery.of(context).size.width * 0.35,
+                            width: MediaQuery.of(context).size.width * 0.42,
                             child: TextFieldWidget(
                               hint: "User name",
                               controller: _nameController,
@@ -77,7 +77,7 @@ class _MySignUpPageState extends State<MySignUpPage> {
                           ),
                           Container(
                             padding: EdgeInsets.only(top: screenHeight * 0.01, bottom: screenHeight * 0.05),
-                            width: MediaQuery.of(context).size.width * 0.35,
+                            width: MediaQuery.of(context).size.width * 0.42,
                             child: TextFieldWidget(
                               hint: "Contact Number",
                               controller: _numberController,
