@@ -46,7 +46,7 @@ class _MySignUpPageState extends State<MySignUpPage> {
                   welcomeWidget(context,"up"),
                   Padding(
                     padding: EdgeInsets.only(bottom: screenHeight * 0.04),
-                    child: Text("Sign in",style: _textTheme.displayLarge,),
+                    child: Text("Sign up",style: _textTheme.displayLarge,),
                   ),
                   Text(
                     "Enter your email address",
