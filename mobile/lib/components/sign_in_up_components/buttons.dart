@@ -13,7 +13,7 @@ class GoogleButtonWidget extends StatelessWidget{
           horizontal: 10,
         ),
         decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.onPrimary,
+          color: Theme.of(context).colorScheme.onSecondary,
           borderRadius: BorderRadius.circular(10),
         ),
         child: Row(
@@ -50,7 +50,7 @@ class FacebookButtonWidget extends StatelessWidget {
             horizontal: 10,
           ),
           decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.onSecondary,
+          color: Theme.of(context).colorScheme.onBackground,
           borderRadius: BorderRadius.circular(10),
         ),
         child: Image.asset(
@@ -67,7 +67,7 @@ class AppleButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context).colorScheme.secondary;
+    final theme = Theme.of(context).primaryColor;
     return GestureDetector(
       onTap: (){},
       child: Container(
@@ -76,12 +76,12 @@ class AppleButtonWidget extends StatelessWidget {
             horizontal: 8,
           ),
           decoration: BoxDecoration(
-            color: Theme.of(context).colorScheme.onSecondary,
+            color: Theme.of(context).colorScheme.onBackground,
             borderRadius: BorderRadius.circular(10),
           ),
           child: Icon(
             Icons.apple_rounded,
-            color: theme == Colors.white ? Colors.black : Colors.white,
+            color: theme == Colors.white ? Colors.black54 : Colors.white,
           )
       ),
     );

@@ -42,12 +42,7 @@ Container welcomeWidget(BuildContext context, String page){
                     },
                     child: Padding(
                       padding: EdgeInsets.zero,
-                      child: TextWidget(
-                        content: "Sign up",
-                        color: Theme.of(context).colorScheme.primary,
-                        size: 16,
-                        bold: false,
-                      ),
+                      child: Text("Sign up",style: _textTheme.labelLarge,),
                     ),
                   )
 
@@ -69,12 +64,7 @@ Container welcomeWidget(BuildContext context, String page){
                     },
                     child: Padding(
                       padding: EdgeInsets.zero,
-                      child: TextWidget(
-                        content: "Sign in",
-                        color: Theme.of(context).colorScheme.primary,
-                        size: 16,
-                        bold: false,
-                      ),
+                      child: Text("Sign in",style: _textTheme.labelLarge,),
                     ),
                   )
 

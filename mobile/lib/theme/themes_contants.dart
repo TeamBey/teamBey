@@ -2,49 +2,63 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 ThemeData lightTheme = ThemeData(
+  primaryColor: Colors.white,
   colorScheme: ColorScheme.fromSeed(
-    seedColor: const Color.fromRGBO(0,128,128,255),
-    onPrimary: Color(0xfffff4e3),
-    secondary: Colors.white,
-    onSecondary: Color(0xffdbdbdb),
+    seedColor: const Color(0xff008080),
+    onPrimary: Color(0xff009688),
+    secondary: Color(0xffFFE082),
+    onSecondary: Color(0xfffff8E1),
+    onBackground: Color(0xffE0E0E0),
+    background: Color(0xffE0F2F1),
   ),
   fontFamily: GoogleFonts.poppins().fontFamily,
   textTheme: const TextTheme(
     bodyLarge: TextStyle(
       fontSize: 20,
-      color: Colors.black
+      color: Colors.black,
     ),
     bodyMedium: TextStyle(
-      color: Colors.black,
       fontSize: 15,
+      color: Colors.black,
     ),
     displayLarge: TextStyle(
-      color: Colors.black,
       fontWeight: FontWeight.bold,
+      color: Colors.black,
     ),
+      labelLarge: TextStyle(
+        fontSize: 15,
+        color: Color(0xff008080),
+      )
   ),
 );
 
 ThemeData darkTheme = ThemeData(
+  primaryColor: Colors.black,
   colorScheme: ColorScheme.fromSeed(
-      seedColor: const Color.fromRGBO(0,128,128,255),
-      onPrimary: Color(0xfffff4e3),
-      secondary: Colors.black54,
-      onSecondary: Colors.grey[600],
+      seedColor: const Color(0xff008080),
+      onPrimary: Color(0xff009688),
+    secondary: Color(0xffFFE082),
+    onSecondary: Color(0xfffff8E1),
+      onBackground: Color(0xff757575),
+      background: Color(0xff424242),
   ),
   fontFamily: GoogleFonts.poppins().fontFamily,
   textTheme: const TextTheme(
     displayLarge: TextStyle(
-      color: Colors.white,
       fontWeight: FontWeight.bold,
+      color: Colors.white,
     ),
     bodyLarge: TextStyle(
         fontSize: 20,
-        color: Colors.white
+      color: Colors.white,
     ),
     bodyMedium: TextStyle(
-      color: Colors.white,
       fontSize: 15,
+      color: Colors.white,
     ),
+    labelLarge: TextStyle(
+      fontSize: 15,
+      color: Color(0xff008080),
+    )
   ),
 );

@@ -25,21 +25,10 @@ class _MySignUpPageState extends State<MySignUpPage> {
     double screenHeight = MediaQuery.of(context).size.height;
     double screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.primary,
+      backgroundColor: Theme.of(context).colorScheme.background,
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         padding: const EdgeInsets.symmetric(vertical: 30,horizontal: 20),
-        child: Center(
-          child: Container(
-            width: screenWidth * 0.9,
-            height: screenHeight * 0.9,
-            decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.secondary,
-                borderRadius: BorderRadius.circular(40)
-            ),
-            padding: const EdgeInsets.all(20),
-            child: SingleChildScrollView(
-              scrollDirection: Axis.vertical,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -53,7 +42,7 @@ class _MySignUpPageState extends State<MySignUpPage> {
                     style: _textTheme.bodyMedium,
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: screenHeight * 0.02, bottom: screenHeight * 0.03),
+                    padding: EdgeInsets.only(top: screenHeight * 0.02, bottom: screenHeight * 0.05),
                     child: TextFieldWidget(
                       hint: "Email address",
                       controller: _emailController,
@@ -70,7 +59,7 @@ class _MySignUpPageState extends State<MySignUpPage> {
                             style: _textTheme.bodyMedium,
                           ),
                           Container(
-                            padding: EdgeInsets.only(top: screenHeight * 0.01, bottom: screenHeight * 0.03),
+                            padding: EdgeInsets.only(top: screenHeight * 0.01, bottom: screenHeight * 0.05),
                             width: MediaQuery.of(context).size.width * 0.35,
                             child: TextFieldWidget(
                               hint: "User name",
@@ -87,7 +76,7 @@ class _MySignUpPageState extends State<MySignUpPage> {
                             style: _textTheme.bodyMedium,
                           ),
                           Container(
-                            padding: EdgeInsets.only(top: screenHeight * 0.01, bottom: screenHeight * 0.03),
+                            padding: EdgeInsets.only(top: screenHeight * 0.01, bottom: screenHeight * 0.05),
                             width: MediaQuery.of(context).size.width * 0.35,
                             child: TextFieldWidget(
                               hint: "Contact Number",
@@ -103,7 +92,7 @@ class _MySignUpPageState extends State<MySignUpPage> {
                     style: _textTheme.bodyMedium,
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: screenHeight * 0.02, bottom: screenHeight * 0.05),
+                    padding: EdgeInsets.only(top: screenHeight * 0.02, bottom: screenHeight * 0.08),
                     child: PasswordTextFieldWidget(
                       hint: "Password",
                       controller: _passController,
@@ -119,9 +108,6 @@ class _MySignUpPageState extends State<MySignUpPage> {
                 ],
               ),
             ),
-          ),
-        ),
-      ),
-    );
+          );
   }
 }
