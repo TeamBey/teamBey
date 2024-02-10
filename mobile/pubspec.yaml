@@ -35,11 +35,12 @@ flutter:
   
   assets:
     - assets/images/
-  
+
   fonts:
     - family: Rubik-Italic
       fonts:
         - asset: assets/fonts/Rubik-Italic.ttf
+  
         
   #   - family: Montserrat
   #     fonts:
