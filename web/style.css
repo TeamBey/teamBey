@@ -1,0 +1,129 @@
+body,html{
+    padding:0;
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    position: relative;
+  
+}
+@media screen and (max-width: 768px) {
+    #background {
+        padding: 10px;
+    }
+}
+.background{
+    display: flex;
+    height: 100%;
+    position: relative;
+    
+}
+.first-half,.second-half{
+    flex: 1;
+    height: 100%;
+
+}
+.first-half{
+    background-color: #008080;
+    position: relative;
+    background-image: url(https://i.imgur.com/bOkJLmX.png);
+    background-size: cover;
+    background-position: center;
+}
+.second-half{
+    background-color: #fffdf8;
+}
+
+.sign-in-box,.sign-up-box{
+    position: absolute;
+    display: flex;
+    width: 30%;
+    margin-top: 100px;
+    margin-left: 520px;
+    height: 70%;
+    background-color:white;
+    z-index: 1;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    
+    
+
+    
+
+}
+.codebey{
+    position: absolute;
+    
+}
+.slay{
+    margin-top: 60px;
+    margin-left: 60px;
+    position: absolute;
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+form{
+    margin: 10px;
+}
+form h3{
+    width: 200px;
+}
+.link{
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  
+    
+}
+.link ,h3,h5,h4{
+    margin: 0;
+    display:inline-block;
+}
+.link  h5{
+    
+   margin-left: 150px;
+   color: gray;
+
+}
+.link h4{
+    margin-left: 100px;
+    color: gray;
+}
+.link a{
+    float: right;
+    margin:10px;
+    color: #008080;
+    
+}
+.link h1{
+    position: absolute;
+    display: flex;
+    margin-left: 50px;
+}
+.username , .password,.contact{
+    position: absolute;
+    width: 90%;
+    height: 50px;
+    border-radius: 10px;
+}
+button{
+    display: flex;
+    width: 80%;
+    height: 8%;
+    border-radius: 10px;
+    color: aliceblue;
+    background-color: #008080;
+    justify-content:  center;
+    font-size: 16px;
+    margin-left: 35px;
+
+}
+form #forget{
+    display: flex;
+    color: red;
+    float: right;
+    margin-top: 60px;
+    margin-right: 20px;
+
+}
