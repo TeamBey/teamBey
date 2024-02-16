@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:teambey_org/presentation/app/app.dart';
 import 'package:teambey_org/presentation/signupLogin/signIn.dart';
+import 'package:teambey_org/presentation/signupLogin/signUp.dart';
 
 void main() {
   
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context){
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const SignIn(),
+      home: const SignUp(),
     );
   }
 }

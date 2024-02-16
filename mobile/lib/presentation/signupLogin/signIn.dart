@@ -246,10 +246,7 @@ class _SignInState extends State<SignIn> {
                         if(value!.isEmpty){
                           return 'Password cannot be empty!';
                         }
-                        if (!RegExp(r'^(?=.*[a-zA-Z])(?=.*\d)(?=.*[@$!%*?&]).{6,}$').hasMatch(value)){
-                          return 'Invalid password';
-                        }
-                        return null;
+                      
                       },
                       decoration: InputDecoration( 
                           hintText: 'Password',
